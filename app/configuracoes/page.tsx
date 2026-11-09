@@ -1,0 +1,16 @@
+"use client";
+
+import { Database, HardDrive, LockKeyhole, Moon, ShieldCheck } from "lucide-react";
+import { DemoBanner, PageHeader } from "@/components/ui";
+
+export default function SettingsPage() {
+  return <>
+    <PageHeader eyebrow="Preferências" title="Configurações e segurança" description="Estrutura visual preparada para futuras integrações." />
+    <DemoBanner />
+    <div className="grid gap-5 lg:grid-cols-2">
+      <section className="panel p-6"><div className="flex gap-3"><span className="grid size-11 place-items-center rounded-xl bg-violet-50 text-violet-600 dark:bg-violet-500/10"><ShieldCheck size={21} /></span><div><h2 className="font-bold">Segurança da conta</h2><p className="mt-1 text-xs text-slate-400">Disponível quando houver autenticação real.</p></div></div><div className="mt-6 space-y-3">{["Autenticação em duas etapas", "Sessões e dispositivos", "Permissões de usuários", "Log de auditoria"].map(item => <div key={item} className="flex items-center justify-between rounded-xl border border-slate-100 p-4 dark:border-white/10"><span className="text-sm font-semibold">{item}</span><span className="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-bold text-slate-400 dark:bg-white/5">FUTURO</span></div>)}</div></section>
+      <section className="panel p-6"><div className="flex gap-3"><span className="grid size-11 place-items-center rounded-xl bg-blue-50 text-blue-600 dark:bg-blue-500/10"><HardDrive size={21} /></span><div><h2 className="font-bold">Dados e backups</h2><p className="mt-1 text-xs text-slate-400">Nenhum backup está ativo nesta demonstração.</p></div></div><div className="mt-6 rounded-2xl border border-dashed border-slate-200 p-6 text-center dark:border-white/10"><Database className="mx-auto text-slate-300" /><strong className="mt-3 block text-sm">Sem armazenamento permanente</strong><p className="mx-auto mt-2 max-w-xs text-xs leading-relaxed text-slate-400">A arquitetura separa interface, regras financeiras e serviço simulado para facilitar a integração futura com banco de dados e rotina de backup.</p></div></section>
+      <section className="panel p-6 lg:col-span-2"><div className="flex gap-3"><span className="grid size-11 place-items-center rounded-xl bg-amber-50 text-amber-600 dark:bg-amber-500/10"><LockKeyhole size={21} /></span><div><h2 className="font-bold">Retenção do histórico</h2><p className="mt-1 text-xs text-slate-400">Regra de seis meses preparada conceitualmente.</p></div></div><div className="mt-6 grid gap-3 sm:grid-cols-3"><div className="rounded-xl bg-slate-50 p-4 dark:bg-white/[.03]"><strong className="text-sm">1. Quitação</strong><p className="mt-1 text-xs text-slate-400">A data é marcada quando o saldo chega a zero.</p></div><div className="rounded-xl bg-slate-50 p-4 dark:bg-white/[.03]"><strong className="text-sm">2. Contagem</strong><p className="mt-1 text-xs text-slate-400">A previsão é calculada seis meses após a quitação.</p></div><div className="rounded-xl bg-slate-50 p-4 dark:bg-white/[.03]"><strong className="text-sm">3. Expiração futura</strong><p className="mt-1 text-xs text-slate-400">A exclusão real dependerá de persistência e regras legais.</p></div></div></section>
+    </div>
+  </>;
+}
